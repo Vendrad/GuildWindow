@@ -1,0 +1,6 @@
+## Interface: 11302
+## Title: Guild Window
+## Author: Dane Shenton
+## Version: 0.1
+
+main.lua
