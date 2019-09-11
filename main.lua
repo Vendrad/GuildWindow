@@ -54,7 +54,7 @@ function editbox(text)
   f.Text:SetText(text)
 end
 
--- GuildWindow_OnLoad();
+GuildWindow_OnLoad();
 
 
 
@@ -90,63 +90,58 @@ end
 
 
 
-local backdrop = {
-  bgFile = "Interface/BUTTONS/WHITE8X8",
-  edgeFile = "Interface/GLUES/Common/Glue-Tooltip-Border",
-  tile = true,
-  edgeSize = 8,
-  tileSize = 8,
-  insets = {
-      left = 5,
-      right = 5,
-      top = 5,
-      bottom = 5,
-  },
-}
+-- local backdrop = {
+--   bgFile = "Interface/BUTTONS/WHITE8X8",
+--   edgeFile = "Interface/GLUES/Common/Glue-Tooltip-Border",
+--   tile = true,
+--   edgeSize = 8,
+--   tileSize = 8,
+--   insets = {
+--       left = 5,
+--       right = 5,
+--       top = 5,
+--       bottom = 5,
+--   },
+-- }
 
 
-local f = CreateFrame("Frame", "MyScrollMessageTextFrame", UIParent)
-f:SetSize(150, 150)
-f:SetPoint("CENTER")
-f:SetFrameStrata("BACKGROUND")
-f:SetBackdrop(backdrop)
-f:SetBackdropColor(0, 0, 0)
-f.Close = CreateFrame("Button", "$parentClose", f)
-f.Close:SetSize(24, 24)
-f.Close:SetPoint("TOPRIGHT")
-f.Close:SetNormalTexture("Interface/Buttons/UI-Panel-MinimizeButton-Up")
-f.Close:SetPushedTexture("Interface/Buttons/UI-Panel-MinimizeButton-Down")
-f.Close:SetHighlightTexture("Interface/Buttons/UI-Panel-MinimizeButton-Highlight", "ADD")
-f.Close:SetScript("OnClick", function(self)
-  self:GetParent():Hide()
-end)
-f.Select = CreateFrame("Button", "$parentSelect", f, "UIPanelButtonTemplate")
-f.Select:SetSize(14, 14)
-f.Select:SetPoint("RIGHT", f.Close, "LEFT")
-f.Select:SetText("S")
-f.Select:SetScript("OnClick", function(self)
-  self:GetParent().Text:HighlightText() -- parameters (start, end) or default all
-  self:GetParent().Text:SetFocus()
-end)
+-- local f = CreateFrame("Frame", "MyScrollMessageTextFrame", UIParent)
+-- f:SetSize(150, 150)
+-- f:SetPoint("CENTER")
+-- f:SetFrameStrata("BACKGROUND")
+-- f:SetBackdrop(backdrop)
+-- f:SetBackdropColor(0, 0, 0)
+-- f.Close = CreateFrame("Button", "$parentClose", f)
+-- f.Close:SetSize(24, 24)
+-- f.Close:SetPoint("TOPRIGHT")
+-- f.Close:SetNormalTexture("Interface/Buttons/UI-Panel-MinimizeButton-Up")
+-- f.Close:SetPushedTexture("Interface/Buttons/UI-Panel-MinimizeButton-Down")
+-- f.Close:SetHighlightTexture("Interface/Buttons/UI-Panel-MinimizeButton-Highlight", "ADD")
+-- f.Close:SetScript("OnClick", function(self)
+--   self:GetParent():Hide()
+-- end)
+-- f.Select = CreateFrame("Button", "$parentSelect", f, "UIPanelButtonTemplate")
+-- f.Select:SetSize(14, 14)
+-- f.Select:SetPoint("RIGHT", f.Close, "LEFT")
+-- f.Select:SetText("S")
+-- f.Select:SetScript("OnClick", function(self)
+--   self:GetParent().Text:HighlightText() -- parameters (start, end) or default all
+--   self:GetParent().Text:SetFocus()
+-- end)
 
-f.SF = CreateFrame("ScrollFrame", "$parent_DF", f, "UIPanelScrollFrameTemplate")
-f.SF:SetPoint("TOPLEFT", f, 12, -30)
-f.SF:SetPoint("BOTTOMRIGHT", f, -30, 10)
-f.Text = CreateFrame("EditBox", nil, f)
-f.Text:SetMultiLine(true)
-f.Text:SetSize(180, 170)
-f.Text:SetPoint("TOPLEFT", f.SF)
-f.Text:SetPoint("BOTTOMRIGHT", f.SF)
-f.Text:SetMaxLetters(99999)
-f.Text:SetFontObject(GameFontNormal)
-f.Text:SetAutoFocus(false)
-f.Text:SetScript("OnEscapePressed", function(self) self:ClearFocus() end) 
-f.SF:SetScrollChild(f.Text)
+-- f.SF = CreateFrame("ScrollFrame", "$parent_DF", f, "UIPanelScrollFrameTemplate")
+-- f.SF:SetPoint("TOPLEFT", f, 12, -30)
+-- f.SF:SetPoint("BOTTOMRIGHT", f, -30, 10)
+-- f.Text = CreateFrame("EditBox", nil, f)
+-- f.Text:SetMultiLine(true)
+-- f.Text:SetSize(180, 170)
+-- f.Text:SetPoint("TOPLEFT", f.SF)
+-- f.Text:SetPoint("BOTTOMRIGHT", f.SF)
+-- f.Text:SetMaxLetters(99999)
+-- f.Text:SetFontObject(GameFontNormal)
+-- f.Text:SetAutoFocus(false)
+-- f.Text:SetScript("OnEscapePressed", function(self) self:ClearFocus() end) 
+-- f.SF:SetScrollChild(f.Text)
 
-f.Text:SetText("bfs fasjdf dsaf adsj fasjkf bsafjsaf bjs fasjkf bjsf basf badsjkf dsakfbhaskf asjkf asjkf skaf sak fsk fdsaf kkl l fjds rewpwfrjpo foewf jjfwe fpwfevzv mcvn  qo fnaw[ffgngnerf we foiweffgorenfg[f fewfn sdskfn asdf sp ffq[ofkgbhp    i regp nIF N 'OFGRE  NG;G KG IGN ;EFPIREG REG  ZG;  ergregp esg gg-ero  rdf45540 4y   q8wffn ")
+-- f.Text:SetText("bfs fasjdf dsaf adsj fasjkf bsafjsaf bjs fasjkf bjsf basf badsjkf dsakfbhaskf asjkf asjkf skaf sak fsk fdsaf kkl l fjds rewpwfrjpo foewf jjfwe fpwfevzv mcvn  qo fnaw[ffgngnerf we foiweffgorenfg[f fewfn sdskfn asdf sp ffq[ofkgbhp    i regp nIF N 'OFGRE  NG;G KG IGN ;EFPIREG REG  ZG;  ergregp esg gg-ero  rdf45540 4y   q8wffn ")
 
-
-
-
-
-94okug7Kdwsoy@3fDDJo
