@@ -3,12 +3,16 @@ function GuildWindow_OnLoad()
   SlashCmdList["GUILDWINDOW"] = GuildWindow_SlashCommand;
 end
 
+function makeRow(player)
+  return "\"" .. table.concat(player, "\",\"") .. "\"";
+end
+
 function aa(a)
   return "\"" .. a .. "\",";
 end
 
 function bb(a)
-  return "\"" .. a .. "\"";
+  return "\"" .. a .. "\"\n";
 end
 
 function GuildWindow_SlashCommand(msg)
@@ -16,15 +20,33 @@ function GuildWindow_SlashCommand(msg)
 
   local i = 1;
   local numMembers = GetNumGuildMembers();
-  local text = "";
+  local players = {};
+
+  DEFAULT_CHAT_FRAME:AddMessage("members: " .. numMembers);
 
   while i <= numMembers do
-    local a, b, c, d, e, f, g, h = GetGuildRosterInfo(i)
-    text = text .. aa(a:gsub("-NethergardeKeep", "")) .. aa(b) .. aa(c) .. aa(d) .. aa(e) .. aa(f) .. aa(g) .. bb(h) .. "\n";
+    local name, rankName, rankIndex, level, classDisplayName, zone, publicNote, officerNote = GetGuildRosterInfo(i);
+    local yearsOffline, monthsOffline, daysOffline, hoursOffline = GetGuildRosterLastOnline(i);
+
+    players[i] = makeRow({
+      name:gsub("-NethergardeKeep", ""),
+      rankName,
+      rankIndex,
+      level,
+      classDisplayName,
+      zone and zone or "",
+      publicNote,
+      officerNote,
+      yearsOffline,
+      monthsOffline,
+      daysOffline,
+      hoursOffline
+    });
+
     i = i + 1;
   end
 
-  editbox(text);
+  editbox(table.concat(players, "\n"));
 end
 
 function editbox(text)
@@ -55,3 +77,11 @@ function editbox(text)
 end
 
 GuildWindow_OnLoad();
+
+
+
+-- for iteration with key/value
+-- local row = "";
+-- for i, value = ipairs(player) do
+--   row = row .. player;
+-- end
