@@ -52,18 +52,18 @@ end
 function editbox(text)
   local f = CreateFrame("Button", "FizzleUIGrabTextFrame", UIParent)
 
-  f:SetBackdrop({
-    bgFile = "Interface/Tooltips/UI-Tooltip-Background",
-    tile = true,
-    tileSize = 16,
-    insets = {
-      left = 0,
-      right = 0,
-      top = 0, 
-      bottom = 0
-    },
-  })
-  f:SetBackdropColor(0, 0, 0)
+  -- f:SetBackdrop({
+  --   bgFile = "Interface/Tooltips/UI-Tooltip-Background",
+  --   tile = true,
+  --   tileSize = 16,
+  --   insets = {
+  --     left = 0,
+  --     right = 0,
+  --     top = 0, 
+  --     bottom = 0
+  --   },
+  -- })
+  -- f:SetBackdropColor(0, 0, 0)
   f:SetPoint("CENTER")
   f:SetSize(500, 500)
 
